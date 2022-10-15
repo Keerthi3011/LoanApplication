@@ -1,0 +1,139 @@
+<div class="container">
+  <div class="row" style="left: 55%">
+    <form #data="ngForm" (ngSubmit)="onSubmit(data.value)">
+      <div class="form-outline mb-4">
+        <label>Loan Amount :</label>
+        <input
+          #amount="ngModel"
+          required
+          name="loanAmount"
+          type="number"
+          min="1"
+          pattern="[0-9.]+$"
+          class="form-control"
+          ngModel
+        />
+        <p *ngIf="amount.invalid && amount.touched" style="color: red">
+          *Please enter the valid input
+        </p>
+      </div>
+      <div class="form-outline mb-4">
+        <label>loan start date(in no.of days) :</label>
+        <input
+          #date="ngModel"
+          required
+          name="loanStartDate"
+          type="number"
+          minlength="2"
+          pattern="[0-9]+$"
+          class="form-control"
+          ngModel
+        />
+        <p *ngIf="date.invalid && date.touched" style="color: red">
+          *Please enter the valid input
+        </p>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label>Payment Frequency :</label>
+        <select
+          #payment="ngModel"
+          required
+          name="paymentFrequency"
+          type="text"
+          class="form-control"
+          ngModel
+        >
+          <option value="1">Monthly</option>
+          <option value="3">Quarterly</option>
+          <option value="6">Half Yearly</option>
+          <option value="12">Yearly</option>
+        </select>
+        <p *ngIf="payment.invalid && payment.touched" style="color: red">
+          *Please select the option
+        </p>
+      </div>
+      <div class="form-outline mb-4">
+        <label>Interest rate :</label>
+        <input
+          #interest="ngModel"
+          required
+          name="interestRate"
+          type="number"
+          minlength="2"
+          pattern="[0-9]+$"
+          class="form-control"
+          ngModel
+        />
+        <p *ngIf="interest.invalid && interest.touched" style="color: red">
+          *Please enter the valid input
+        </p>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label>No.of years(for paying the loan) :</label>
+        <select
+          #years="ngModel"
+          required
+          name="noOfMonth"
+          type="text"
+          class="form-control"
+          ngModel
+        >
+          <option value="12">1 year</option>
+          <option value="36">3 years</option>
+          <option value="60">5 years</option>
+        </select>
+        <p *ngIf="years.invalid && years.touched" style="color: red">
+          *Please select the option
+        </p>
+      </div>
+      <div class="form-outline mb-4">
+        <label>Payment term :</label>
+        <select
+          #term="ngModel"
+          required
+          name="paymentTeam"
+          type="text"
+          class="form-control"
+          ngModel
+        >
+          <option>Even Principal</option>
+          <option>Interest Only</option>
+        </select>
+        <p *ngIf="term.invalid && term.touched" style="color: red">
+          *Please select the option
+        </p>
+      </div>
+      <br /><br />
+      <div>
+        <button
+          type="button"
+          class="btn"
+          style="background-color: rgba(154, 55, 154, 0.786);"
+          [disabled]="data.invalid"
+          (click)="ApplyLoan()"
+        >
+          Apply
+        </button>
+        <div class="popup" id="loan">
+          <h5>Are you sure to apply this loan?</h5>
+          <button
+            type="submit"
+            class="btn btn-success btn-sm"
+            (click)="cancelLoan()"
+          >
+            Apply
+          </button>
+          <button class="btn btn-danger" type="button" (click)="closeCancel()">
+            Cancel
+          </button>
+        </div>
+        <br /><br />
+        <span class="alert alert-success" [hidden]="issubmitDissabled">
+          {{ Response }}
+        </span>
+      </div>
+    </form>
+  </div>
+</div>

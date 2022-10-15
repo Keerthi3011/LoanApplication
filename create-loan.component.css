@@ -1,0 +1,51 @@
+span{
+    /* float: right; */
+    text-align: center;
+    position: absolute;
+    margin-left: 10%;
+}
+button{
+    text-align: center;
+    width: 450px;
+    height: 50px;
+    border: #0d6efd;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+form{
+    width: 500px;
+    margin-left: 30%;
+    margin-top: 2%;
+}
+.popup{
+    
+    margin-top: 0px;
+    background: #fff;
+    border-radius: 6px;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    top:0%;
+    left: 53%;
+    transform: translate(-50%,-50%) scale(0.1);
+    text-align: center;
+    padding: 0,30px,30px;
+    visibility: hidden;
+    box-shadow: 10px 10px 10px ;
+}
+.popup button{
+    width: 100px;
+    height: 50px;
+
+}
+.popup h5{
+    margin-top: 10%;
+}
+
+.open-popup{
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%,-50%) scale(1);
+}

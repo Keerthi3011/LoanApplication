@@ -1,0 +1,22 @@
+<table class="table table-bordered table-hover" style="text-align: center">
+  <thead>
+    <th>Customer Id</th>
+    <th>Loan Amount</th>
+    <th>Trade Date</th>
+    <th>Loan Start Date</th>
+    <th>Maturity Date</th>
+    <th>Payment Frequency</th>
+    <th>Interest Rate</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of Details">
+      <td>{{ item.customerId }}</td>
+      <td>{{ item.loanAmount }}</td>
+      <td>{{ item.tradeDate }}</td>
+      <td>{{ item.loanStartDate }}</td>
+      <td>{{ item.maturityDate }}</td>
+      <td>{{ item.paymentFrequency }}</td>
+      <td>{{ item.interestRate }}</td>
+    </tr>
+  </tbody>
+</table>

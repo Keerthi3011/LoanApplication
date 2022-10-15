@@ -1,0 +1,22 @@
+<table class="table table-bordered table-hover" style="text-align: center">
+  <thead>
+    <th>Payment number</th>
+    <th>payment Date</th>
+    <th>principal</th>
+    <th>projected Interest</th>
+    <th>paymentAmount</th>
+    <th>paymentStatus</th>
+    <th>Customer Id</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of Details">
+      <td>{{ item.payment_number }}</td>
+      <td>{{ item.paymentDate }}</td>
+      <td>{{ item.principal }}</td>
+      <td>{{ item.projectedInterest }}</td>
+      <td>{{ item.paymentAmount }}</td>
+      <td>{{ item.paymentStatus }}</td>
+      <td>{{ item.Customer_id }}</td>
+    </tr>
+  </tbody>
+</table>
